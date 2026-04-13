@@ -145,29 +145,34 @@
 
     \resumeSubheading
       {Graduate Research Assistant}{Oct. 2024 -- Present}
-      {George Mason University}{Fairfax, VA}
+      {Wireless, IoTm and Sensing Lab, George Mason University}{Fairfax, VA}
       \resumeItemListStart
-        \resumeItem{Applied bleeding edge ML techniques for creating surrogate models of RF simulators}
-        % \resumeItem{Designed, implemented, and evaluated surrogate models using Graph Neural Networks and Transformer architectures}
-        \resumeItem{Designed and implemented end-to-end data pipelines required for data exploration and training}
+        % \resumeItem{Applied bleeding edge neural rendering techniques to train surrogate models of wireless raytracing simulators}
+        \resumeItem{Developed surrogate models for wireless raytracing simulators using state-of-the-art mesh neural rendering techniques for accelerating power delay spectrum estimation}
+        \resumeItem{Architected a distributed ETL pipeline to process 3D urban meshes from OpenStreetMap and generate 500k simulated propagation environments for training using HPC resources}
+        % \resumeItem{Designed and implemented data pipelines required for data exploration and training}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Device Engineering Intern (Embedded Linux Team)}{Jun. 2024 -- Aug. 2024}
-      {Alarm.com}{Tysons, VA}
+      {Device Engineering Intern}{Jun. 2024 -- Aug. 2024}
+      {Embedded Linux Team, Alarm.com}{Tysons, VA}
       \resumeItemListStart
-        \resumeItem{Ported the ADC Hub service to the Telit LE910C4-NF LTE module}
-        \resumeItem{Implemented platform dependent code to support core features}
-        \resumeSubItem{AT command state machine, Z-Wave integrations, and cellular backhaul for IP cameras via Wi-Fi and Ethernet}
-        \resumeItem{Profiled LTE using Amari Callbox and Wi-Fi add-on card in STA/AP mode}
+        \resumeItem{Migrated Alarm Hub service from an MCU to a Telit LE910C4-NF module, elimintating the MCU requirement to reduce manufacturing costs and product complexity while maintaining feature parity with existing hub products}
+        \resumeItem{Planned and implemented the hardware abstraction layer to route existing Z-Wave and AT command subsystems communication via shared memory and UART devices}
+        \resumeItem{Automated the management of routing, firewalls, and kernel drivers across Wi-Fi, Ethernet, and cellular interfaces to ensure high-availability for connected IP camera video streams and smart home appliances}
+        \resumeItem{Performed RF stress testing using an Amari Callbox and iperf3 to verify network stability under high network and CPU load}
+        % \resumeItem{Configured the Linux networking stack (iptables, dnsmasq) for WiFi and Ethernet interfaces and implemented hooks for driver loading}
+        % \resumeItem{Refactored AT command stack, Z-Wave radio, and network interface management subsystems to function on module}
+        % \resumeItem{Integrated remote Z-Wave device management, and scripts to configure cellular backhaul for IP cameras via Wi-Fi and Ethernet}
+        % \resumeItem{Profiled LTE using Amari Callbox and Wi-Fi add-on card in STA/AP mode}
       \resumeItemListEnd
 
     \resumeSubheading
       {Assistant Instructor}{Mar. 2020 -- Oct. 2024}
       {Elite M.A. Centers}{Springfield, VA}
       \resumeItemListStart
-        \resumeItem{Led Taekwondo classes for students of all ages}
-        \resumeItem{Design class content and drills to maximize student growth and engagement}
+      \resumeItem{Planned and taught class content and drills for students of all ages}
+      \resumeItem{Led daily summer camp activities}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -177,15 +182,28 @@
 \section{Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{RFFormer} $|$ \emph{Python, PyTorch, PyG, sionna-rt, Docker}}{June 2020 -- Present}
-          \resumeItemListStart
-            \resumeItem{}
-          \resumeItemListEnd
-      \resumeProjectHeading
           {\textbf{Incremental Process Checkpointing} $|$ \emph{C, Linux, KVM/QEMU}}{Spring 2025}
+          % \resumeItemListStart
+          %   \resumeItem{Designed and implemented an efficient incremental memory checkpointing scheme for the Linux kernel using system calls}
+          %   \resumeItem{Extended the pagefault handler to track modified pages on first writes using hardware virtual memory flags, with minimal overhead}
+          % \resumeItemListEnd
           \resumeItemListStart
-            \resumeItem{}
-          \resumeItemListEnd
+            \resumeItem{Implemented custom Linux system calls to checkpoint process memory by traversing virtual memory areas and saving to disk}
+            \resumeItem{Modified the kernel page fault handler to track modified pages on first writes, enabling incremental state capture with minimal runtime overhead}
+      \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{RF-RayML} $|$ \emph{Python, PyTorch, PyG, sionna-rt, Docker}}{June 2020 -- Present}
+          \resumeItemListStart
+            \resumeItem{Implemented a graph neural network using PyTorch Geometric to model wireless signal propagation in complex 3D environments to arbitrary locations by constructing a visiblity graph of triangles within the mesh environment}
+          \resumeItem{}
+        \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Personal Homelab} $|$ \emph{Proxmox VE, Linux, WireGuard}}{Jan. 2023 -- Present}
+          \resumeItemListStart
+            \resumeItem{Managed virtual machines using Proxmox VE hypervisor for network services, shared storage, and persistent compute tasks}
+            \resumeItem{Configured a OpenMediaVault VM with SATA controller passthrough to manage network storage shares and automated daily backups}
+            \resumeItem{Deployed a WireGuard tunnel to provide external access to shared storage and compute for multiple users}
+      \resumeItemListEnd
     \resumeSubHeadingListEnd
 
 
@@ -195,7 +213,7 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages}{: Python, C, Java} \\
-     \textbf{Tools}{: Git, Container, VS Code, HPC, Linux} \\
+     \textbf{Tools}{: Git, Containers, Virtualization, HPC (SLURM), Linux} \\
      \textbf{Libraries}{: PyG, PyTorch, NumPy, sionna-rt}
     }}
  \end{itemize}
